@@ -1,0 +1,16 @@
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url('s1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbar{
+    background-color: rgb(238, 240, 154);
+}
+button{
+    margin-left: 20%;
+}
+.card{
+    margin-top: 20%;
+}

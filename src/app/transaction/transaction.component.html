@@ -1,0 +1,18 @@
+<div class="body">
+    <div class="container">
+        <div class="table">
+            <table>
+                <thead>
+                    <th>TYPE</th>
+                    <th>AMOUNT</th>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let i of transactionS">
+                        <th>{{i.type}}</th>
+                        <th>{{i.amount}}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+<body>
+    <div class="welcome">
+        <h5>WELCOME <b>{{user}}</b>.....HAVE A NICE DAY</h5>
+        <!-- date and time from the system -->
+        <h5 class="c" style="background-color: rgb(114, 226, 204);"><b>DATE & TIME : {{systemDetails | date :
+                'short'}}</b></h5>
+    </div>
+    <div class="container">
+        <button id="q10" style="background-color: green;" class="btn btn-outline-success" type="button"
+            (click)="history()">HISTORY</button>
+        <button id="q11" class="btn btn-warning" (click)="logout()" type="button">LOGOUT</button>
+        <button id="q12" class="btn btn-danger" (click)="delete()" type="button">DELETE</button>
+    </div>
+
+    <!-- child class seclectore app-delete-confirm -->
+    <app-delete-confirm (onCancel)="noDelete()" [item]="acno"></app-delete-confirm>
+
+    <div>
+        <div class="row">
+            <div class="col-6">
+                <div [ngClass]="acno?'style1':''" class="card w-50" id="e2">
+                    <div class="card-title"><u>
+                            <h3>DEPOSITE FROM</h3>
+                        </u></div>
+                    <div class="card-body">
+                        <form action="" [formGroup]="depositeForms" (ngSubmit)="deposite()">
+                            <div id="q1">
+                                <label for="w1">ENTER ACCOUNT NUMBER</label><br>
+                                <input formControlName="account" name="account" type="text" id="w1"
+                                    placeholder="enter your account number">
+                            </div>
+                            <div>
+                                <h6 class="q12"
+                                    *ngIf="this.depositeForms.get('account')?.touched&&this.depositeForms.get('account')?.errors">
+                                    invalid account number</h6>
+                            </div>
+                            <div id="q1">
+                                <label for="w2">ENTER PASSWORD</label><br>
+                                <input formControlName="password" name="password" type="text" id="w2"
+                                    placeholder="enter your password">
+                            </div>
+                            <div>
+                                <h6 class="q12"
+                                    *ngIf="this.depositeForms.get('password')?.touched&&this.depositeForms.get('account')?.errors">
+                                    invalid password</h6>
+                            </div>
+                            <div id="q1">
+                                <label for="w3">ENTER AMOUNT</label><br>
+                                <input formControlName="amount" name="amount" type="text" id="w3"
+                                    placeholder="enter amount">
+                            </div>
+                            <div>
+                                <h6 class="q12"
+                                    *ngIf="this.depositeForms.get('amount')?.touched&&this.depositeForms.get('amount')?.errors">
+                                    invalid amount</h6>
+                            </div>
+                            <button class="btn" type="submit"
+                                style="background-color:  rgb(186, 206, 100);">CREDIT</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <!-- withdraw logic -->
+                <div [ngClass]="acno?'style1':''" class="card w-50" id="e1">
+                    <form action="" [formGroup]="withdrawForms" (ngSubmit)="withdraw()">
+                        <div class="card-title"><u>
+                                <h3>WITHDRAW FROM</h3>
+                            </u></div>
+                        <div class="card-body">
+                            <div id="q2">
+                                <label for="w4">ENTER ACCOUNT NUMBER</label><br>
+                                <input formControlName="account1" name="account1" type="text" id="w4"
+                                    placeholder="enter your account number">
+                            </div>
+                            <div>
+                                <h6 class="q12"
+                                    *ngIf="this.withdrawForms.get('account1')?.touched&&this.depositeForms.get('account')?.errors">
+                                    invalid account number</h6>
+                            </div>
+                            <div id="q2">
+                                <label for="w5">ENTER PASSWORD</label><br>
+                                <input formControlName="password1" name="password1" type="text" id="w5"
+                                    placeholder="enter your password">
+                            </div>
+                            <div>
+                                <h6 class="q12"
+                                    *ngIf="this.withdrawForms.get('password1')?.touched&&this.depositeForms.get('account')?.errors">
+                                    invalid account number</h6>
+                            </div>
+                            <div id="q2">
+                                <label for="w6">ENTER AMOUNT</label><br>
+                                <input formControlName="amount1" name="amount1" type="text" id="w6"
+                                    placeholder="enter amount">
+                            </div>
+                            <div>
+                                <h6 class="q12"
+                                    *ngIf="this.withdrawForms.get('amount1')?.touched&&this.depositeForms.get('account')?.errors">
+                                    invalid account number</h6>
+                            </div>
+                            <button class="btn btn-success" type="submit">DEBIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <footer style="text-align: center;" class="blockquote-footer"> <cite title="Source Title">Thanks for connecting
+                with us......</cite></footer>
+    </div>
+</body>

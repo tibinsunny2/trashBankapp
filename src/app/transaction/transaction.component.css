@@ -1,0 +1,19 @@
+
+.body{
+    padding-top: 10%;
+    height:100vh;
+    background-image: url('./dashbord1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+tr,th,table{
+    border: 2px solid black;
+}
+table{
+    background-color: aliceblue;
+    width:50%;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 40%;
+}

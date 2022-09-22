@@ -1,0 +1,45 @@
+body{
+    padding-top: 0%;
+    height:100vh;
+    background-image: url('./a1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section{
+    margin-top: 0%;
+}
+.card{
+    background-color: white;
+    margin-left: 45%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    height: fit-content;
+}
+.card-body{
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+button{
+    background-color: rgb(148, 148, 212);
+}
+#w,#q{
+    padding-bottom: 10%;
+}
+
+.q3{
+color: red;
+background-color: aqua;
+}
+#card{
+    margin-top: 5%;
+}
+nav{
+    background-color: aqua;
+}
+h5{
+    padding-bottom: 1%;
+    padding-top: 1%;
+}

@@ -1,0 +1,50 @@
+<body>
+    <nav>
+        <h5><b><u>WELCOME TO THE WORLD OF FREEDOM..............</u></b></h5>
+    </nav>
+
+    <section>
+        <div class="card w-25" id="s" style="border: 2px solid black;">
+            <div class="card-title"><u><b>REGISTER PAGE</b></u></div>
+            <div class="card-body">
+                <form class="form-controle" [formGroup]="registerForms" (ngSubmit)="register()">
+                    <div id="q1">
+                        <label for="w1">enter username</label><br>
+                        <input type="text" placeholder="enter username" name="username" id="w1"
+                            formControlName="username">
+                    </div>
+                    <div class="aq">
+                        <h6
+                            *ngIf="this.registerForms.get('username')?.touched && this.registerForms.get('username')?.errors">
+                            invalid username</h6>
+                    </div>
+                    <div id="q2">
+                        <label for="w2">enter account number</label><br>
+                        <input type="text" name="account" placeholder="enter account number" id="w2"
+                            formControlName="account">
+                    </div>
+                    <div class="aq">
+                        <h6
+                            *ngIf="this.registerForms.get('account')?.touched&&this.registerForms.get('account')?.errors">
+                            invalid </h6>
+                    </div>
+                    <div id="q3">
+                        <label for="w3">enter password</label><br>
+                        <input type="text" name="password" placeholder="enter password" id="w3"
+                            formControlName="password">
+                    </div>
+                    <div class="aq">
+                        <h6
+                            *ngIf="this.registerForms.get('password')?.touched&&this.registerForms.get('password')?.errors">
+                            invalid username</h6>
+                    </div>
+                    <button class="btn" type="submit">REGISTER</button>
+                </form>
+                <div class="alert">
+                    <h5>HAVE AN ACCOUNT??? </h5>
+                    <a href="">LOGIN</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

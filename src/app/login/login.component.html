@@ -1,0 +1,37 @@
+<body>
+        <nav>
+            <h5><b><u>WELCOME TO THE WORLD OF FREEDOM..............</u></b></h5>
+        </nav>
+    <div>
+    <section>
+        <div id="card" class="card w-25" style="border: 2px solid black;">
+            <div class="card-title"><u><b>LOGIN PAGE</b></u></div>
+            <div class="card-body">
+                <form class="form-controle" [formGroup]="loginFroms" (ngSubmit)="login()">
+                    <div id="q">
+                        <label for="q1">enter account number</label><br><br>
+                        <input formControlName="account" type="text" placeholder="enter account number" id="q1"
+                            name="account" formControlName="account">
+                    </div>
+                    <div>
+                        <h6 class="q3" *ngIf="this.loginFroms.get('account')?.touched && this.loginFroms.get('account')?.errors">invalid data</h6>
+                    </div>
+                    <div id="w">
+                        <label for="w1">enter password</label><br><br>
+                        <input type="text" placeholder="enter password" id="w1" name="password"
+                            formControlName="password"><br><br>
+                    </div>
+                    <div>
+                        <h6 class="q3" *ngIf="this.loginFroms.get('password')?.touched && this.loginFroms.get('password')?.errors">invalid data</h6>
+                    </div>
+                    <button class="btn" type="submit">LOGIN</button>
+                </form>
+                <div class="alert">
+                    <h5>DONT HAVE AN ACCOUNT??? </h5>
+                    <a href="register">REGISTER</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
